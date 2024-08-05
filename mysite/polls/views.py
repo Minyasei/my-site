@@ -3,6 +3,7 @@ from django.db.models import F
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
+from django.template import loader
 
 from .models import Question, Choice
 
@@ -37,6 +38,6 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse("polls:results", args=(question_id,)))
 
 def index(request):
-    latest_question_list = Question.objects.order_by("-pub_date")[:6]
-    context = {"latest_question_list": latest_question_list}
-    return render(request, "polls/index.html", context)
+    latest_question_list = Question.objects.all()
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
