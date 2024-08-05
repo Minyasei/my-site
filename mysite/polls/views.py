@@ -37,6 +37,6 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse("polls:results", args=(question_id,)))
 
 def index(request):
-    latest_question_list = Question.objects.order_by("-pub_date")[:5]
+    latest_question_list = Question.objects.order_by("-pub_date")[:6]
     context = {"latest_question_list": latest_question_list}
     return render(request, "polls/index.html", context)
