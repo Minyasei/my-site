@@ -39,21 +39,6 @@ pip is included with Python, but you can ensure you have the latest version by r
     python -m ensurepip --upgrade
 `
 
--Create virtual environment in Django:
-We should first go the directory where we want to create the virtual environment then we type the following command to create virtual environment in django.
-`
-  python -m venv env_site
-`
-
--Activate the virtual environment:
-Run the activation script located in the bin directory within the virtual environment folder
-
-For Windows:
-.\env_site\Scripts\activate.ps1
-
-For MacOs/Linux:
-source env_site/bin/activate
-
 -Install Django:
 Install django by giving following command:
  
