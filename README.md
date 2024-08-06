@@ -25,7 +25,7 @@ Open the command prompt and enter the following command
 - Download Python 
 Go to the [[Python website](https://www.python.org/downloads/)] and download the latest version of Python.
 
--Install Python
+- Install Python
 Follow the instructions to install Python on your system. Make sure to check the box to add Python to your PATH during the installation.
 
 -Verify Python Installation
@@ -33,13 +33,13 @@ Follow the instructions to install Python on your system. Make sure to check the
     python --version
 `
 
--Install Pip
+- Install Pip
 pip is included with Python, but you can ensure you have the latest version by running:
 `
     python -m ensurepip --upgrade
 `
 
--Install Django:
+- Install Django:
 Install django by giving following command:
  
 `
