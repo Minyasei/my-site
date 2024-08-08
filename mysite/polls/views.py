@@ -8,7 +8,7 @@ from django.template import loader
 from .models import Question, Choice
 
 
-def index(request):
+def index(request): # type: ignore
     return HttpResponse("Hello, world. You're at the polls index.")
 
 def detail(request, question_id):
