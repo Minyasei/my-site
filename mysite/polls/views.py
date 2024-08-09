@@ -2,7 +2,6 @@ from django.db.models import F
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.template import loader
 from .models import Question, Choice
 
 def get_question_or_404(question_id):

@@ -1,4 +1,4 @@
-<h1> Welcome user! <br> Please login to see My Polls </h1>
+<h1>Welcome user! <br> Please login to see My Polls</h1>
 
 {% if request.user.is_authenticated %}
   <p>Hello, {{ request.user.username }}!</p>
@@ -7,12 +7,10 @@
     <button type="submit">Logout</button>
   </form>
 {% else %}
-  <form method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
+  <form method="GET" action="{% url 'login' %}">
     <button type="submit">Login</button>
   </form>
-  <form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
+  <form method="GET" action="{% url 'signup' %}">
     <button type="submit">Signup</button>
   </form>
 {% endif %}

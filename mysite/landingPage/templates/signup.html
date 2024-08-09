@@ -1,7 +1,16 @@
-<h1>Signup</h1>
-<form method="POST" action="{% url 'signup' %}">
+<h1>Sign up</h1>
+<form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Sign up</button>
     <a href="{% url 'login' %}">Have an account?</a>
 </form>
+{% if form.non_field_errors %}
+    <div class="error">
+        <ul>
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
