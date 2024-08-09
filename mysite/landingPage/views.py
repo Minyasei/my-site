@@ -22,6 +22,7 @@ def user_login(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
+            #user = authenticate(request, username=username, password=password) if refactor didn't work
             if user := authenticate(
                 request, username=username, password=password
             ):
@@ -34,3 +35,4 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect('login')
+ #user = authenticate(request, username=username, password=password) if refactor didn't work
