@@ -1,0 +1,18 @@
+<h1> Welcome user! <br> Please login to see My Polls </h1>
+
+{% if request.user.is_authenticated %}
+  <p>Hello, {{ request.user.username }}!</p>
+  <form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+{% else %}
+  <form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <button type="submit">Login</button>
+  </form>
+  <form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <button type="submit">Signup</button>
+  </form>
+{% endif %}
