@@ -27,12 +27,11 @@ def user_login(request):
                 request, username=username, password=password
             ):
                 login(request, user)
-                return redirect('home')
+                return redirect('polls/')
     else:
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
 def user_logout(request):
     logout(request)
-    return redirect('login')
- #user = authenticate(request, username=username, password=password) if refactor didn't work
+    return redirect('home')

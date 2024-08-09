@@ -27,6 +27,7 @@
 *.sql
 *.sqlite
 *db.sqlite3
+mysite\db.sqlite3
 
 # OS generated files #
 ######################
