@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.db.models import F
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -11,12 +12,15 @@ def detail_or_results(request, question_id, template_name):
     question = get_question_or_404(question_id)
     return render(request, template_name, {"question": question})
 
+@login_required
 def detail(request, question_id):
     return detail_or_results(request, question_id, "polls/detail.html")
 
+@login_required
 def results(request, question_id):
     return detail_or_results(request, question_id, "polls/results.html")
 
+@login_required
 def vote(request, question_id):
     question = get_question_or_404(question_id)
     try:
@@ -36,6 +40,7 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse("polls:results", args=(question_id,)))
 
 #display
+@login_required
 def index(request):
     latest_question_list = Question.objects.all()
     context = {'latest_question_list': latest_question_list}

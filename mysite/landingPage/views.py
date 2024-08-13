@@ -14,8 +14,6 @@ def user_signup(request):
             auth_login(request, user)
             print("User signed up and logged in. Redirecting to polls.")
             return redirect('login')
-        else:
-            print("Form errors:", form.errors)
     else:
         form = SignupForm()
     return render(request, 'signup.html', {'form': form})
