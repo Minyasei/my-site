@@ -8,6 +8,7 @@ This is a simple Django application for creating and voting on polls. Users can 
 - Add multiple choices to each question.
 - Vote on choices for each question.
 - View poll results.
+- See user action history.
 
 ## Prerequisites
 

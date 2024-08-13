@@ -14,4 +14,4 @@ class UserActionHistory(models.Model):
     choice = models.ForeignKey(Choice, on_delete=models.CASCADE, null= True, blank= True)
 
     def __str__(self):
-        return f"{self.user} - {self.action} on {self.question} at {self.timestamp}"
+        return f"{self.user} - {self.action} on {self.question} with {self.choice} at {self.timestamp}"
