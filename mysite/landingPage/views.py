@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login, authenticate, logout 
 from .forms import SignupForm, LoginForm
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def index(request):
-    return render(request, 'index.html')
+    return redirect('polls:index')
+
+def home(request):
+    return render(request, 'landingPage/index.html')
+
 
 def user_signup(request):
     if request.method == 'POST':
@@ -21,7 +26,6 @@ def user_signup(request):
 
 def user_login(request):
     if request.user.is_authenticated:
-        print("User is already authenticated. Redirecting to polls.")
         return redirect('polls:index')
 
     if request.method == 'POST':
