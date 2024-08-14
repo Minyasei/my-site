@@ -27,12 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGIN_URL = 'http://127.0.0.1:8000/login?'
+LOGIN_URL = 'http://127.0.0.1:8000/polls?'
 
 # Application definition
 
 INSTALLED_APPS = [
-    'simple_history',
+    'chat',
     'polls.apps.PollsConfig',
     'landingPage',
     'django.contrib.admin',

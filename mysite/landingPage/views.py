@@ -20,6 +20,10 @@ def user_signup(request):
 
 
 def user_login(request):
+    if request.user.is_authenticated:
+        print("User is already authenticated. Redirecting to polls.")
+        return redirect('polls:index')
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -28,12 +32,15 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 auth_login(request, user)
-                return redirect('polls/')
+                print("User authenticated. Redirecting to polls.")
+                return redirect('polls:index')
             else:
                 form.add_error(None, 'Invalid username or password')
     else:
         form = LoginForm()
+
     return render(request, 'login.html', {'form': form})
+
 
 def user_logout(request):
     logout(request)

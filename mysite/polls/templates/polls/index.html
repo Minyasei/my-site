@@ -7,3 +7,7 @@
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+<form action="{% url 'chat:chat' %}" method="get">
+    <button type="submit">Talk with other users</button>
+</form>
