@@ -5,11 +5,10 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
-    return redirect('polls')
+    return redirect('polls:index')
 
 def home(request):
     return render(request, 'landingPage/index.html')
-
 
 def user_signup(request):
     if request.method == 'POST':
@@ -42,7 +41,6 @@ def user_login(request):
         form = LoginForm()
 
     return render(request, 'login.html', {'form': form})
-
 
 def user_logout(request):
     logout(request)
