@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
-    return redirect('polls:index')
+    return redirect('polls')
 
 def home(request):
     return render(request, 'landingPage/index.html')
@@ -17,7 +17,6 @@ def user_signup(request):
         if form.is_valid():
             user= form.save()
             auth_login(request, user)
-            print("User signed up and logged in. Redirecting to polls.")
             return redirect('login')
     else:
         form = SignupForm()
@@ -36,7 +35,6 @@ def user_login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 auth_login(request, user)
-                print("User authenticated. Redirecting to polls.")
                 return redirect('polls:index')
             else:
                 form.add_error(None, 'Invalid username or password')

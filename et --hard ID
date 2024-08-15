@@ -1,0 +1,17 @@
+[33m5f80010[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD^
+[33mf548e34[m HEAD@{1}: reset: moving to HEAD^
+[33m5567491[m HEAD@{2}: reset: moving to HEAD~1
+[33m7baa4ce[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: pull --tags origin main: Fast-forward
+[33m5567491[m HEAD@{4}: reset: moving to HEAD~1
+[33m7baa4ce[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{5}: commit: git ignore pcy files and including chat app
+[33m5567491[m HEAD@{6}: commit: "Updated .gitignore to include __pycache__ directories recursively and added specific __pycache__ files to be ignored."
+[33mf548e34[m HEAD@{7}: commit: @login_required decorator added to direct logged in user to polls
+[33m5f80010[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{8}: commit: added chat app in URLS and edited message templates, added talk button below questions
+[33m1175ded[m HEAD@{9}: commit: Updated README to add new feature "user action history" and added self choice at models
+[33mc2d75cd[m HEAD@{10}: commit: added UserActionHistory model (vote), improved admin panel
+[33m8767fbf[m HEAD@{11}: commit: signup works, user is not admin anymore
+[33m2c0584a[m HEAD@{12}: commit: done "successful login -> polls,
+[33m383d9d6[m HEAD@{13}: commit: Updated login template, views, and fixed typo in login.html
+[33m85b3057[m HEAD@{14}: commit: "Added *.sqlite3 to .gitignore"
+[33m258fa55[m HEAD@{15}: commit: Added landingPage app, modified urls for root, added account templates for display
+[33m8cbb0cc[m HEAD@{16}: clone: from https://github.com/Minyasei/my-site.git
