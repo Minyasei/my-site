@@ -12,3 +12,7 @@
 <form action="{% url 'chat:chat' %}" method="get">
     <button type="submit">Talk with other users</button>
 </form>
+<form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
