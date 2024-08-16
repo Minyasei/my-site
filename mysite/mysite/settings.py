@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 LOGIN_REDIRECT_URL = 'http://127.0.0.1:8000/polls?'
 LOGOUT_REDIRECT_URL = 'http://127.0.0.1:8000/home'
 
+APPEND_SLASH = False
+
 # Application definition
 
 INSTALLED_APPS = [
