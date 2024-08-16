@@ -9,7 +9,7 @@
     <p>No polls are available.</p>
 {% endif %}
 
-<form action="{% url 'chat:chat' %}" method="get">
+<form action="{% url 'chat:home' %}" method="get">
     <button type="submit">Talk with other users</button>
 </form>
 <form method="POST" action="{% url 'logout' %}">

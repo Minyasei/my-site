@@ -1,12 +1,11 @@
 from django.db import models
+from datetime import datetime
 
-class User(models.Model):
-    name= models.CharField(max_length=140)
-    
+class Room(models.Model):
+    name = models.CharField(max_length=20, unique=True)
+
 class Message(models.Model):
-    sender = models.ForeignKey(User, on_delete=models.CASCADE, related_name="sent_messages")
-    receiver = models.ForeignKey(User, on_delete= models.CASCADE, related_name="recieved_mesage")
-    subject= models.CharField(max_length= 200)
-    body= models.TextField()
-    created_at= models.DateTimeField(auto_now_add=True)
-    
+    value = models.CharField(max_length=240)
+    date = models.DateTimeField(auto_now_add=True)
+    user = models.CharField(max_length=30)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE)

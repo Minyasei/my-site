@@ -1,13 +1,20 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Message
+from django.shortcuts import render, redirect
+from .models import Room, Message
 
-def message_list(request):
-    message= Message.objects.all()
-    return render(request, 'message_list.html', {'message': message})
+def home(request):
+    return render(request, 'chat/home.html')
 
-def message_detail (request, pk):
-    message= get_object_or_404(Message, pk=pk)
-    return render (request, 'message_detail.html', {'message':message})
+def room(request, room_name, username):
+    context = {'room_name': room_name, 'username': username}
+    return render(request, 'chat/room.html', context)
 
-def chat_view(request):
-    return render(request, 'chat.html')
+def checkview(request):
+    room_name = request.POST['room_name']
+    username = request.POST['username']
+    
+    if Room.objects.filter(name=room_name).exists():
+        return redirect(f'/{room_name}/username={username}')
+    else:
+        new_room = Room.objects.create(name=room_name)
+        new_room.save()
+        return redirect(f'/{room_name}/username={username}')

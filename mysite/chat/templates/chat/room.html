@@ -1,0 +1,13 @@
+<h2>{{ room }} - DjChat</h2>
+{% for message in messages %}
+    <p>{{ message.value }}</p>
+    <span class="time-left">{{ message.date }}</span>
+{% endfor %}
+
+<form method="post" action="{% url 'send_message' %}">
+    {% csrf_token %}
+    <input type="hidden" name="username" value="{{ username }}"/>
+    <input type="hidden" name="room_id" value="{{ room_details.id }}"/>
+    <input type="text" name="message" width="100px" />
+    <input type="submit" value="Send">
+</form>
