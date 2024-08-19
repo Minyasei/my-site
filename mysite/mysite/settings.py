@@ -34,7 +34,9 @@ LOGOUT_REDIRECT_URL = 'http://127.0.0.1:8000/home'
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'chats.apps.ChatsConfig',
+    'channels',
     'polls.apps.PollsConfig',
     'landingPage',
     'django.contrib.admin',
@@ -74,6 +76,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
+ASGI_APPLICATION = "mysite.asgi.application"
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 
 
 # Database
