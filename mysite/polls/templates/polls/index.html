@@ -9,9 +9,10 @@
     <p>No polls are available.</p>
 {% endif %}
 
-<form action="{% url 'chat:home' %}" method="get">
+<form action="{% url 'chats:index' %}" method="get">
     <button type="submit">Talk with other users</button>
-</form>
+</form> 
+
 <form method="POST" action="{% url 'logout' %}">
     {% csrf_token %}
     <button type="submit">Logout</button>
