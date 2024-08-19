@@ -29,7 +29,7 @@ Go to the [[Python website](https://www.python.org/downloads/)] and download the
 - Install Python
 Follow the instructions to install Python on your system. Make sure to check the box to add Python to your PATH during the installation.
 
--Verify Python Installation
+- Verify Python Installation
 `
     python --version
 `
@@ -46,6 +46,14 @@ Install django by giving following command:
 `
   pip install django
 `
+## Dependencies
+- Django Channels:
+
+  `
+  python -m pip install -U channels["daphne"]
+  `
+
+- This will install Channels together with the Daphne ASGI application server. If you wish to use a different application server you can `pip install channels`, without the optional daphne add-on.
 
 ## Installation
 
@@ -93,4 +101,3 @@ Run the development server:
 4. Commit your changes (`git commit -am 'Add new feature'`).
 5. Push to the branch (`git push origin feature-branch`).
 6. Open a pull request.
-
