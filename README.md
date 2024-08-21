@@ -47,7 +47,7 @@ Install django by giving following command:
   pip install django
 `
 ## Dependencies
-- Django Channels:
+### Django Channels:
 
   `
   python -m pip install -U channels["daphne"]
@@ -55,6 +55,25 @@ Install django by giving following command:
 
 - This will install Channels together with the Daphne ASGI application server. If you wish to use a different application server you can `pip install channels`, without the optional daphne add-on.
 
+### Redis (With Docker):
+  Download Docker Desktop -> https://www.docker.com/products/docker-desktop/
+- In Docker Terminal download Redis
+  `
+  docker pull redis
+  `
+- Run Redis in Docker
+  `
+   docker run --name my-redis-container -d redis
+  `
+- Verify if Redis is working
+  `
+  docker ps
+  `
+- To stop Redis Container
+  `
+  docker stop my-redis-container
+  `
+  
 ## Installation
 
 Clone the repository
