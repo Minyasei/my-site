@@ -1,6 +1,6 @@
 # Django Mysite
 
-This is a simple Django application for creating and voting on polls. Users can create questions with multiple choices, and others can vote on their favorite choices.
+This is a simple Django application for creating and voting on polls. Users can create questions with multiple choices, and others can vote on their favorite choices. Users also can talk with each other in real-time chat rooms. 
 
 ## Features
 
